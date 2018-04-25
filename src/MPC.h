@@ -10,8 +10,8 @@ class Constants
 {
   public:
     // TODO: Set the timestep length and duration
-    static const size_t N = 10;
-    static constexpr  double DT = 0.1;
+    static const size_t N = 15;
+    static constexpr  double DT = 0.1; //seconds
     static const int POLY_ORDER = 3;
 
     // This value assumes the model presented in the classroom is used.
@@ -26,10 +26,11 @@ class Constants
     // This is the length from front to CoG that has a similar radius.
     static constexpr  double LF = 2.67;
 
+    static constexpr double FACTOR_MILES_TO_METER_PER_SEC = 0.44704;
     // Both the reference cross track and orientation errors are 0.
     // The reference velocity is set to 40 mph.
-    static constexpr  double REF_V = 43;
-
+    static constexpr  double REF_V = 40 * FACTOR_MILES_TO_METER_PER_SEC; //convert from m/h to m/s
+    
     // The solver takes all the state variables and actuator
     // variables in a singular vector. Thus, we should to establish
     // when one variable starts and another ends to make our lifes easier.

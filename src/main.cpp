@@ -94,6 +94,11 @@ int main() {
           double steering = j[1]["steering_angle"];
           double throttle = j[1]["throttle"];
 
+          // cout << "given Velocity (mile/hour): " << v << endl;
+          v = Constants::FACTOR_MILES_TO_METER_PER_SEC * v; //converting from mile/hour to meter/sec
+          // cout << "given Velocity: (meter/sec): " << v << endl;
+          // cout << "json value: " << j[1] << endl;
+
           Eigen::VectorXd ptsx_v(ptsx.size());
           Eigen::VectorXd ptsy_v(ptsy.size());
           for(unsigned int i=0; i < ptsx.size(); i++){
